@@ -6,9 +6,24 @@ import { AppComponent } from './app.component';
 import { SocialLoginComponent } from './social-login/social-login.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { UserStatusComponent } from './user-status/user-status.component';
-import { PremiumUserComponent } from './premium-user/premium-user.component';
 import { DefaultUserComponent } from './default-user/default-user.component';
 
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider
+} from 'angular5-social-login';
+
+export function getAuthServiceConfigs() {
+  const config = new AuthServiceConfig(
+    [
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider('google-login-id')
+      }
+    ]);
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -16,13 +31,13 @@ import { DefaultUserComponent } from './default-user/default-user.component';
     SocialLoginComponent,
     UserInfoComponent,
     UserStatusComponent,
-    PremiumUserComponent,
     DefaultUserComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [{provide: AuthServiceConfig, useFactory: getAuthServiceConfigs}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
