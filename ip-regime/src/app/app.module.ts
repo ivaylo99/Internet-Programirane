@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SocialLoginComponent } from './social-login/social-login.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { UserStatusComponent } from './user-status/user-status.component';
 import { DefaultUserComponent } from './default-user/default-user.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PremiumUserComponent } from './premium-user/premium-user.component';
 
 import {
   SocialLoginModule,
@@ -31,11 +33,14 @@ export function getAuthServiceConfigs() {
     SocialLoginComponent,
     UserInfoComponent,
     UserStatusComponent,
-    DefaultUserComponent
+    DefaultUserComponent,
+    PremiumUserComponent
   ],
   imports: [
     BrowserModule,
-    SocialLoginModule
+    SocialLoginModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [{provide: AuthServiceConfig, useFactory: getAuthServiceConfigs}],
   bootstrap: [AppComponent]

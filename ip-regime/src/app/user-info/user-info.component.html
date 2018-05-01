@@ -1,106 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-<script type="text/javascript">
-        window.onload = function () {
-			var count = 0;
-            var ddl = document.getElementById('mycontainer').getElementsByTagName("select")[0];
-            for (var i = 18; i <= 100; i++) {
-			count ++;
-                var theOption = new Option;
-                theOption.text = i;
-                theOption.value = i;
-                ddl.options[count] = theOption;
-            }
-			count = 0;
-            var ddl = document.getElementById('mycontainer1').getElementsByTagName("select")[0];
-            for (var i = 40; i <= 180; i++) {
-			count ++;
-                var theOption = new Option;
-                theOption.text = i;
-                theOption.value = i;
-                ddl.options[count] = theOption;
-            }
+<p style="font-size:48px"> Hello, {{username}}!<br>
+  Tell us more about you
+</p>
 
-			 count = 0;
-            var ddl = document.getElementById('mycontainer2').getElementsByTagName("select")[0];
-            for (var i = 130; i <= 210; i++) {
-			count ++;
-                var theOption = new Option;
-                theOption.text = i;
-                theOption.value = i;
-                ddl.options[count] = theOption;
-            }
-
-		};
-
-    </script>
-</head>
-<body>
-
-<p style="font-size:48px"> Hello, ime ot social logina<br> Tell us more about you </p>
-
-
-        <div id="mycontainer">
-            <select id="AgeDropdownId" name="AgeDropdown" class="AgeDropdown" runat="server">
-                <option value="" disabled selected>Select Age</option>
-            </select>
-        </div>
-
-<br>
-
+How old are you?
+<div id="mycontainer">
+  <input [(ngModel)]="age" type="number" placeholder="e.g. 25">
+</div> <br>
+How much do you weigh?
 <div id="mycontainer1">
-            <select id="WeightDropdownId" name="WeightDropdown" class="WeightDropdown" runat="server">
-                <option value="" disabled selected>Select Weight(KG)</option>
-            </select>
-        </div>
-
-		<br>
-
+    <input [(ngModel)]="weight" type="number" placeholder="e.g. 75">
+</div> <br>
+How tall are you?
 <div id="mycontainer2">
-            <select id="HeightDropdownId" name="HeightDropdown" class="HeightDropdown" runat="server">
-                <option value="" disabled selected>Select Height(CM)</option>
-            </select>
-        </div>
-
-
-<br>
-<select>
-    <option value="" disabled selected>Select your gender</option>
-    <option value="male">Male</option>
+    <input [(ngModel)]="height" type="number" placeholder="e.g. 194">
+</div> <br>
+Gender:<br>
+<select [(ngModel)]="gender">
+  <option value="" disabled selected>Select your gender</option>
+  <option value="male">Male</option>
 	<option value="female">Female</option>
-</select>
-<br>
-<br>
-<select>
-    <option value="" disabled selected>Select your activity level</option>
-    <option value="noActivity">No Activity</option>
+</select> <br><br>
+Activity level:<br>
+<select [(ngModel)]="activity">
+  <option value="" disabled selected>Select your activity level</option>
+  <option value="noActivity">No Activity</option>
 	<option value="3/wk">3 wourkouts/week</option>
 	<option value="more">more than 3 wourkouts/week</option>
-</select>
-<br>
-<br>
-<select>
-    <option value="" disabled selected>Select your goal</option>
-    <option value="bulk">Clean bulk</option>
+</select> <br> <br>
+Goal:<br>
+<select [(ngModel)]="goal">
+  <option value="" disabled selected>Select your goal</option>
+  <option value="bulk">Clean bulk</option>
 	<option value="cut">Lose fat</option>
-</select>
-<br>
-<br>
-<select>
-    <option value="" disabled selected>Select meals per day</option>
-    <option value="3">3 meals per day</option>
+</select> <br> <br>
+Meals amount:<br>
+<select [(ngModel)]="meals">
+  <option value="" disabled selected>Select meals per day</option>
+  <option value="3">3 meals per day</option>
 	<option value="4">4 meals per day</option>
 	<option value="5">5 meals per day</option>
-</select>
-<br>
-<br>
-  <form action= "../user-status/user-status.component.html">
-    <input style="font-size:28px" type="submit" value="NEXT" />
-</form>
+</select> <br> <br>
 
 
-
-
-</body>
-</html>
+<button style="font-size:28px" type="submit"
+(click)="submitUserInfo()">NEXT</button>

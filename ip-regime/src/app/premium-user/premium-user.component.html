@@ -1,4 +1,4 @@
-<p style="font-size:48px"> Pick your favourite foods </p>
+<p style="font-size:48px"> Pick your favourite foods, {{username}} </p>
 
 <table style="width:50%">
   <tr>
@@ -7,79 +7,92 @@
     <th><h1>Fats:</h1></th>
   </tr>
   <tr>
-    <td><select>
-  <option value="Spagetti">Spagetti</option>
-  <option value="Oats">Oats</option>
-  <option value="Rice">Rice</option>
-  <option value="Banana">Banana</option>
-  <option value="Wholegrain bread">Wholegrain bread</option>
-</select></td>
-  <td><select id="protein">
-  <option value="Pork neck">Pork neck</option>
-  <option value="Cottage cheese">Cottage cheese</option>
-  <option value="Chicken breast">Chicken breast</option>
-  <option value="Whey protein">Whey protein</option>
-  <option value="eggs">eggs</option>
-</select></td>
-    <td><select id="fats">
-  <option value="Olive oil">Olive oil</option>
-  <option value="Butter">Butter</option>
-  <option value="Almonds">Almonds</option>
-  <option value="Avocado">Avocado</option>
-  <option value="Milk">Milk</option>
-</select></td>
+    <td>
+      <select [(ngModel)]="carbs_first">
+        <option value="Spagetti">Spagetti</option>
+        <option value="Oats">Oats</option>
+        <option value="Rice">Rice</option>
+        <option value="Banana">Banana</option>
+        <option value="Wholegrain bread">Wholegrain bread</option>
+      </select>
+    </td>
+    <td>
+      <select id="protein" [(ngModel)]="protein_first">
+        <option value="Pork neck">Pork neck</option>
+        <option value="Cottage cheese">Cottage cheese</option>
+        <option value="Chicken breast">Chicken breast</option>
+        <option value="Whey protein">Whey protein</option>
+        <option value="eggs">eggs</option>
+      </select>
+    </td>
+    <td>
+      <select id="fats" [(ngModel)]="fats_first">
+        <option value="Olive oil">Olive oil</option>
+        <option value="Butter">Butter</option>
+        <option value="Almonds">Almonds</option>
+        <option value="Avocado">Avocado</option>
+        <option value="Milk">Milk</option>
+      </select>
+    </td>
   </tr>
   <tr>
-    <td><select>
-  <option value="Spagetti">Spagetti</option>
-  <option value="Oats">Oats</option>
-  <option value="Rice">Rice</option>
-  <option value="Banana">Banana</option>
-  <option value="Wholegrain bread">Wholegrain bread</option>
-</select></td>
-    <td><select id="protein">
-  <option value="Pork neck">Pork neck</option>
-  <option value="Cottage cheese">Cottage cheese</option>
-  <option value="Chicken breast">Chicken breast</option>
-  <option value="Whey protein">Whey protein</option>
-  <option value="eggs">eggs</option>
-</select></td>
-    <td><select id="fats">
-  <option value="Olive oil">Olive oil</option>
-  <option value="Butter">Butter</option>
-  <option value="Almonds">Almonds</option>
-  <option value="Avocado">Avocado</option>
-  <option value="Milk">Milk</option>
-</select></td>
+    <td>
+      <select [(ngModel)]="carbs_second">
+        <option value="Spagetti">Spagetti</option>
+        <option value="Oats">Oats</option>
+        <option value="Rice">Rice</option>
+        <option value="Banana">Banana</option>
+        <option value="Wholegrain bread">Wholegrain bread</option>
+      </select>
+    </td>
+    <td>
+      <select id="protein" [(ngModel)]="protein_second">
+        <option value="Pork neck">Pork neck</option>
+        <option value="Cottage cheese">Cottage cheese</option>
+        <option value="Chicken breast">Chicken breast</option>
+        <option value="Whey protein">Whey protein</option>
+        <option value="eggs">eggs</option>
+      </select>
+    </td>
+    <td>
+      <select id="fats" [(ngModel)]="fats_second">
+        <option value="Olive oil">Olive oil</option>
+        <option value="Butter">Butter</option>
+        <option value="Almonds">Almonds</option>
+        <option value="Avocado">Avocado</option>
+        <option value="Milk">Milk</option>
+      </select>
+    </td>
   </tr>
   <tr>
-    <td><select>
-  <option value="Spagetti">Spagetti</option>
-  <option value="Oats">Oats</option>
-  <option value="Rice">Rice</option>
-  <option value="Banana">Banana</option>
-  <option value="Wholegrain bread">Wholegrain bread</option>
-</select></td>
-    <td><select id="protein">
-  <option value="Pork neck">Pork neck</option>
-  <option value="Cottage cheese">Cottage cheese</option>
-  <option value="Chicken breast">Chicken breast</option>
-  <option value="Whey protein">Whey protein</option>
-  <option value="eggs">eggs</option>
-</select></td>
-    <td><select id="fats">
-  <option value="Olive oil">Olive oil</option>
-  <option value="Butter">Butter</option>
-  <option value="Almonds">Almonds</option>
-  <option value="Avocado">Avocado</option>
-  <option value="Milk">Milk</option>
-</select></td>
+    <td>
+      <select [(ngModel)]="carbs_third">
+        <option value="Spagetti">Spagetti</option>
+        <option value="Oats">Oats</option>
+        <option value="Rice">Rice</option>
+        <option value="Banana">Banana</option>
+        <option value="Wholegrain bread">Wholegrain bread</option>
+      </select>
+    </td>
+    <td>
+      <select id="protein" [(ngModel)]="protein_third">
+        <option value="Pork neck">Pork neck</option>
+        <option value="Cottage cheese">Cottage cheese</option>
+        <option value="Chicken breast">Chicken breast</option>
+        <option value="Whey protein">Whey protein</option>
+        <option value="eggs">eggs</option>
+      </select>
+    </td>
+    <td>
+      <select id="fats" [(ngModel)]="fats_third">
+        <option value="Olive oil">Olive oil</option>
+        <option value="Butter">Butter</option>
+        <option value="Almonds">Almonds</option>
+        <option value="Avocado">Avocado</option>
+        <option value="Milk">Milk</option>
+      </select>
+    </td>
   </tr>
-</table>
+</table> <br> <br>
 
-<br>
-<br>
-
-<form action= "../default-user/default-user.component.html">
-    <input style="font-size:40px" type="submit" value="NEXT" />
-</form>
+<button (click)="submitPlan()" style="font-size:40px" type="submit">NEXT</button>

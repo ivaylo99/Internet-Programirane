@@ -3,6 +3,7 @@ import {
   AuthService,
   GoogleLoginProvider
 } from 'angular5-social-login';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-social-login',
@@ -11,7 +12,7 @@ import {
 })
 export class SocialLoginComponent implements OnInit {
 
-  constructor(private socialAuthService: AuthService) { }
+  constructor(private socialAuthService: AuthService, private route: Router) { }
 
   ngOnInit() {
   }
@@ -26,8 +27,12 @@ export class SocialLoginComponent implements OnInit {
       (userData) => {
         const player = {'email': userData.email};
         console.log(socialPlatform + ' sign in data : ' , userData);
-        // Now sign-in with userData
+        this.redirect(userData.name);
       }
     );
+  }
+
+  redirect(username) {
+    this.route.navigate(['register', username]);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-status',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserStatusComponent implements OnInit {
 
-  constructor() { }
+  private username;
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.username = this.route.params['value']['username']
   }
 
+  defaultUser() {
+    this.redirect('regular', this.username)
+  }
+
+  premiumUser() {
+    this.redirect('premium', this.username)
+  }
+
+  redirect(where, param) {
+    this.router.navigate([where, param])
+  }
 }
