@@ -14,7 +14,28 @@
                 theOption.value = i;
                 ddl.options[count] = theOption;
             }
-        };
+			count = 0;
+            var ddl = document.getElementById('mycontainer1').getElementsByTagName("select")[0];
+            for (var i = 40; i <= 180; i++) {
+			count ++;
+                var theOption = new Option;
+                theOption.text = i;
+                theOption.value = i;
+                ddl.options[count] = theOption;
+            }
+    	
+			 count = 0;
+            var ddl = document.getElementById('mycontainer2').getElementsByTagName("select")[0];
+            for (var i = 130; i <= 210; i++) {
+			count ++;
+                var theOption = new Option;
+                theOption.text = i;
+                theOption.value = i;
+                ddl.options[count] = theOption;
+            }
+		
+		};
+	
     </script>
 </head>
 <body>
@@ -28,32 +49,46 @@
             </select>
         </div>
    
-   
+<br>
 
+<div id="mycontainer1">
+            <select id="WeightDropdownId" name="WeightDropdown" class="WeightDropdown" runat="server">
+                <option value="" disabled selected>Select Weight(KG)</option>
+            </select>
+        </div>
 
-<select class="40-180"></select>
+		<br>
 
-<select class="130-210"></select>
+<div id="mycontainer2">
+            <select id="HeightDropdownId" name="HeightDropdown" class="HeightDropdown" runat="server">
+                <option value="" disabled selected>Select Height(CM)</option>
+            </select>
+        </div>
 
+	
+<br>
 <select>
     <option value="" disabled selected>Select your gender</option>
     <option value="male">Male</option>
 	<option value="female">Female</option>
 </select>
-
+<br>
+<br>
 <select>
     <option value="" disabled selected>Select your activity level</option>
     <option value="noActivity">No Activity</option>
 	<option value="3/wk">3 wourkouts/week</option>
 	<option value="more">more than 3 wourkouts/week</option>
 </select>
-
+<br>
+<br>
 <select>
     <option value="" disabled selected>Select your goal</option>
     <option value="bulk">Clean bulk</option>
 	<option value="cut">Lose fat</option>
 </select>
-
+<br>
+<br>
 <select>
     <option value="" disabled selected>Select meals per day</option>
     <option value="3">3 meals per day</option>
