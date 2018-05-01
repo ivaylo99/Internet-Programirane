@@ -1,3 +1,70 @@
-<p>
-  user-info works!
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="premium-user.component.css">
+
+<script type="text/javascript">
+        window.onload = function () {
+			var count = 0;
+            var ddl = document.getElementById('mycontainer').getElementsByTagName("select")[0];
+            for (var i = 18; i <= 100; i++) {
+			count ++;
+                var theOption = new Option;
+                theOption.text = i;
+                theOption.value = i;
+                ddl.options[count] = theOption;
+            }
+        };
+    </script>
+</head>
+<body>
+
+<p style="font-size:48px"> Hello, ime ot social logina<br> Tell us more about you </p> 
+
+
+        <div id="mycontainer">
+            <select id="AgeDropdownId" name="AgeDropdown" class="AgeDropdown" runat="server">
+                <option value="" disabled selected>Select Age</option>
+            </select>
+        </div>
+   
+   
+
+
+<select class="40-180"></select>
+
+<select class="130-210"></select>
+
+<select>
+    <option value="" disabled selected>Select your gender</option>
+    <option value="male">Male</option>
+	<option value="female">Female</option>
+</select>
+
+<select>
+    <option value="" disabled selected>Select your activity level</option>
+    <option value="noActivity">No Activity</option>
+	<option value="3/wk">3 wourkouts/week</option>
+	<option value="more">more than 3 wourkouts/week</option>
+</select>
+
+<select>
+    <option value="" disabled selected>Select your goal</option>
+    <option value="bulk">Clean bulk</option>
+	<option value="cut">Lose fat</option>
+</select>
+
+<select>
+    <option value="" disabled selected>Select meals per day</option>
+    <option value="3">3 meals per day</option>
+	<option value="4">4 meals per day</option>
+	<option value="5">5 meals per day</option>
+</select>
+
+  
+
+
+
+  
+</body>
+</html>
