@@ -9,7 +9,7 @@ import { UserStatusComponent } from './user-status/user-status.component';
 import { DefaultUserComponent } from './default-user/default-user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PremiumUserComponent } from './premium-user/premium-user.component';
-
+import {HttpClientModule} from '@angular/common/http';
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -37,6 +37,7 @@ export function getAuthServiceConfigs() {
     PremiumUserComponent
   ],
   imports: [
+	HttpClientModule,
     BrowserModule,
     SocialLoginModule,
     AppRoutingModule,

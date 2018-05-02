@@ -13,7 +13,7 @@ export class DefaultUserComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.username = this.route.params['values']['username']
+    this.username = this.route.params['value']['username']
   }
 
 }
